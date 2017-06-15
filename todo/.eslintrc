@@ -1,0 +1,39 @@
+{
+  "extends": "../.eslintrc",
+
+  "ecmaFeatures": {
+    "jsx": true,
+  },
+  "env": {
+    "browser": true,
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
+  },
+  "plugins": [
+    "react"
+  ],
+
+  "globals": {
+    "jest": true,
+    "expect": true,
+    "mockFn": true,
+    "config": true,
+
+    "afterEach": true,
+    "beforeEach": true,
+    "describe": true,
+    "it": true,
+    "runs": true,
+    "waitsFor": true,
+    "pit": true,
+    "require": true,
+    "xdescribe": true,
+    "xit": true
+  }  
+}
