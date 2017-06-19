@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTodos } from '../actions/query';
+import { getTodos, addTodo } from '../actions/query';
 
 import TodoItem from './TodoItem';
 
@@ -34,7 +34,7 @@ class Todos extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            dispatch({ type: 'ADD', action: queryText.value });
+            dispatch(addTodo(queryText.value));
             queryText.value = '';
           }}
         >

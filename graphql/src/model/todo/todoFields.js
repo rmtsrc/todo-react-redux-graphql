@@ -51,12 +51,17 @@ const TodoSchemaFields = {
 
 const TodoSchemaMutationFields = {
   createTodo: {
-    type: GraphQLInt,
-    description: 'Create a new todo item returns the its new id',
+    type: TodoType,
+    description: 'Create a new todo item returns the its new id and action',
     args: {
       action: Todo.fields.action,
     },
-    resolve: (source, args) => createTodo(args).then(data => data['id']),
+    resolve: (source, args) =>
+      createTodo(args).then(data => ({
+        id: data['id'],
+        completed: false,
+        action: args.action,
+      })),
   },
   updateTodo: {
     type: GraphQLBoolean,

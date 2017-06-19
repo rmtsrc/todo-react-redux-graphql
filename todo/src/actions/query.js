@@ -27,21 +27,31 @@ const getGraph = payload => {
   };
 };
 
-export const getTodos = () =>
-  getGraph(`{
-    allTodos {
-      id,
-      action,
-      completed
-    }
-  }`);
+const todoFields = `{
+  id,
+  action,
+  completed
+}`;
+
+export const getTodos = () => getGraph(`{ allTodos ${todoFields} }`);
 
 const mutate = payload => request(`mutation { ${payload} }`);
 
-export const addTodo = action => mutate(`createTodo(action:"${action}")`);
+export const addTodo = action => {
+  return dispatch => {
+    mutate(`createTodo(action:"${action}") ${todoFields}`).then(res => {
+      const { id, action } = res.data.createTodo;
+      dispatch({
+        type: 'ADD',
+        id,
+        action,
+      });
+    });
+  };
+};
 
 export const updateTodo = (id, action) =>
-  mutate(`updateTodo(id: ${id}, action: ${action})`);
+  mutate(`updateTodo(id: ${id}, action: "${action}")`);
 
 export const updateCompleted = (id, completed) =>
   mutate(`updateCompleted(id: ${id}, completed: ${completed})`);
