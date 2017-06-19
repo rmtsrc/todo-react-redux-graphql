@@ -18,6 +18,7 @@
     "indent": ["warn", 2],
     "key-spacing": 1,
     "keyword-spacing": 2,
+    "no-console": ["error", { allow: ["info", "warn", "error"] }],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": ["warn", {
       "max": 1,
