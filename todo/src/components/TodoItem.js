@@ -20,7 +20,7 @@ export default class TodoItem extends Component {
         <span
           onDoubleClick={() => {
             onDoubleClickTodo(id, action, dispatch);
-            window.getSelection().removeAllRanges();
+            window.getSelection && window.getSelection().removeAllRanges();
           }}
         >
           {checked ? <strike>{action}</strike> : action}{' '}
