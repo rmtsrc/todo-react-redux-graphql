@@ -18,7 +18,7 @@ export default class TodoItem extends Component {
           onChange={() => dispatch({ type: 'TOGGLE_COMPLETED', id })}
         />{' '}
         <span
-          onDoubleClick={e => {
+          onDoubleClick={() => {
             onDoubleClickTodo(id, action, dispatch);
             window.getSelection().removeAllRanges();
           }}
