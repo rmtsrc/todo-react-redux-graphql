@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a completed todo item 1`] = `
+<p>
+  <input
+    checked={true}
+    onChange={[Function]}
+    type="checkbox"
+  />
+   
+  <span
+    onDoubleClick={[Function]}
+  >
+    <strike>
+      hello world
+    </strike>
+     
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    <span
+      aria-label="Delete"
+      role="img"
+    >
+      ❌
+    </span>
+  </button>
+</p>
+`;
+
+exports[`renders a todo item 1`] = `
+<p>
+  <input
+    checked={false}
+    onChange={[Function]}
+    type="checkbox"
+  />
+   
+  <span
+    onDoubleClick={[Function]}
+  >
+    hello world
+     
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    <span
+      aria-label="Delete"
+      role="img"
+    >
+      ❌
+    </span>
+  </button>
+</p>
+`;

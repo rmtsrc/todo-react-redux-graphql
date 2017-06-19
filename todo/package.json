@@ -11,8 +11,11 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "enzyme": "^2.8.2",
     "jest-cli": "^20.0.4",
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^2.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
