@@ -1,4 +1,4 @@
-import { addTodo, updateCompleted, deleteTodo } from '../actions/query';
+import { updateCompleted, updateTodo, deleteTodo } from '../actions/query';
 
 const initialState = {
   fetching: false,
@@ -21,10 +21,9 @@ export const queryReducer = (state = initialState, action) => {
   case 'ADD': {
     const newTodolist = state.allTodos.slice(0);
     newTodolist.push({
-      id: newTodolist.length + 1,
+      id: action.id,
       completed: false,
       action: action.action,
-      result: addTodo(action.action),
     });
     return {
       ...state,
@@ -45,6 +44,19 @@ export const queryReducer = (state = initialState, action) => {
         };
       }),
     };
+  case 'EDIT':
+    return {
+      ...state,
+      allTodos: state.allTodos.map(todo => {
+        if (todo.id !== action.id) return todo;
+
+        return {
+          ...todo,
+          action: action.action,
+          result: updateTodo(todo.id, action.action),
+        };
+      }),
+    };
   case 'DELETE': {
     let newTodolist = state.allTodos.slice(0);
     newTodolist = newTodolist.filter(todo => {
@@ -57,7 +69,6 @@ export const queryReducer = (state = initialState, action) => {
       allTodos: newTodolist,
     };
   }
-    // case 'EDIT':
   default:
     return state;
   }
