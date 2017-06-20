@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an empty todos list 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      placeholder="Add new todo..."
+      type="text"
+    />
+     
+    <input
+      type="submit"
+      value="Add"
+    />
+  </form>
+</div>
+`;
+
+exports[`renders an existing todos list 1`] = `
+<div>
+  <p>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+     
+    <span
+      onDoubleClick={[Function]}
+    >
+      foo
+       
+    </span>
+    <button
+      onClick={[Function]}
+    >
+      <span
+        aria-label="Delete"
+        role="img"
+      >
+        ❌
+      </span>
+    </button>
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      placeholder="Add new todo..."
+      type="text"
+    />
+     
+    <input
+      type="submit"
+      value="Add"
+    />
+  </form>
+</div>
+`;

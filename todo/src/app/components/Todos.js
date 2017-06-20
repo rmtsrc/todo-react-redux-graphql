@@ -4,7 +4,7 @@ import { getTodos, addTodo } from '../actions/query';
 
 import TodoItem from './TodoItem';
 
-class Todos extends Component {
+export default class Todos extends Component {
   componentDidMount () {
     this.props.dispatch(getTodos());
   }
@@ -39,6 +39,8 @@ class Todos extends Component {
           }}
         >
           <input
+            type="text"
+            placeholder="Add new todo..."
             ref={node => {
               queryText = node;
             }}

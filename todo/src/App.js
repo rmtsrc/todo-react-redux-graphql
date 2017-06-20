@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { queryReducer } from './reducers/query';
+import { queryReducer } from './app/reducers/query';
 import thunkMiddleware from 'redux-thunk';
 
-import { TodosContainer } from './components/Todos';
+import { TodosContainer } from './app/components/Todos';
 
 import './App.css';
 
