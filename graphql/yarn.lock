@@ -35,10 +35,6 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-ap@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/ap/-/ap-0.2.0.tgz#ae0942600b29912f0d2b14ec60c45e8f330b6110"
-
 aproba@^1.0.3:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.1.2.tgz#45c6629094de4e96f693ef7eab74ae079c240fc1"
@@ -515,9 +511,9 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generic-pool@2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-2.4.2.tgz#886bc5bf0beb7db96e81bcbba078818de5a62683"
+generic-pool@2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-2.4.3.tgz#780c36f69dfad05a5a045dd37be7adca11a4f6ff"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -759,6 +755,10 @@ isstream@~0.1.2:
 iterall@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.1.tgz#f7f0af11e9a04ec6426260f5019d9fcca4d50214"
+
+js-string-escape@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/js-string-escape/-/js-string-escape-1.0.1.tgz#e2625badbc0d67c7533e9edc1068c587ae4137ef"
 
 jsbn@~0.1.0:
   version "0.1.1"
@@ -1034,6 +1034,10 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
+object-assign@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
+
 object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
@@ -1128,9 +1132,20 @@ pg-connection-string@0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-0.1.3.tgz#da1847b20940e42ee1492beaf65d49d91b245df7"
 
+pg-int8@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
+
 pg-minify@0.4:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/pg-minify/-/pg-minify-0.4.2.tgz#c75b4b5878960fb09c3b9a4d4eb1036aea7ea0e3"
+
+pg-pool@1.*:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-1.8.0.tgz#f7ec73824c37a03f076f51bfdf70e340147c4f37"
+  dependencies:
+    generic-pool "2.4.3"
+    object-assign "4.1.0"
 
 pg-promise@^5.9.3:
   version "5.9.3"
@@ -1142,23 +1157,24 @@ pg-promise@^5.9.3:
     spex "1.2"
 
 pg-types@1.*:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/pg-types/-/pg-types-1.12.0.tgz#8ad3b7b897e3fd463e62de241ad5fc640b4a66f0"
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/pg-types/-/pg-types-1.13.0.tgz#75f490b8a8abf75f1386ef5ec4455ecf6b345c63"
   dependencies:
-    ap "~0.2.0"
+    pg-int8 "1.0.1"
     postgres-array "~1.0.0"
     postgres-bytea "~1.0.0"
     postgres-date "~1.0.0"
     postgres-interval "^1.1.0"
 
 pg@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/pg/-/pg-5.1.0.tgz#073b9b36763ad8a5478dbb85effef45e739ba9d8"
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/pg/-/pg-5.2.1.tgz#d43d0b2e53908ed61aa60928a38f6d791a2a66b3"
   dependencies:
     buffer-writer "1.0.1"
-    generic-pool "2.4.2"
+    js-string-escape "1.0.1"
     packet-reader "0.2.0"
     pg-connection-string "0.1.3"
+    pg-pool "1.*"
     pg-types "1.*"
     pgpass "0.0.6"
     semver "4.3.2"
@@ -1180,20 +1196,20 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
 postgres-array@~1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/postgres-array/-/postgres-array-1.0.2.tgz#8e0b32eb03bf77a5c0a7851e0441c169a256a238"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/postgres-array/-/postgres-array-1.0.3.tgz#c561fc3b266b21451fc6555384f4986d78ec80f5"
 
 postgres-bytea@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/postgres-bytea/-/postgres-bytea-1.0.0.tgz#027b533c0aa890e26d172d47cf9ccecc521acd35"
 
 postgres-date@~1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.3.tgz#e2d89702efdb258ff9d9cee0fe91bd06975257a8"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.5.tgz#710b27de5f27d550f6e80b5d34f7ba189213c2ee"
 
 postgres-interval@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.1.0.tgz#1031e7bac34564132862adc9eb6c6d2f3aa75bb4"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.2.0.tgz#b460c82cb1587507788819a06aa0fffdb3544695"
   dependencies:
     xtend "^4.0.0"
 
@@ -1436,8 +1452,8 @@ split@0.3:
     through "2"
 
 split@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/split/-/split-1.0.0.tgz#c4395ce683abcd254bc28fe1dabb6e5c27dcffae"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
   dependencies:
     through "2"
 
@@ -1644,5 +1660,5 @@ xdg-basedir@^2.0.0:
     os-homedir "^1.0.0"
 
 xtend@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
